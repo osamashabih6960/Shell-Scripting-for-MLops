@@ -1,0 +1,17 @@
+
+#!/bin/bash
+
+# This is Jetha Lal Ki Duniya
+
+<< comment 
+Anything
+Written
+here will not be executed
+comment 
+
+
+name = "jetha"
+
+echo "Name is $name"
+
+

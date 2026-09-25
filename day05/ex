@@ -1,0 +1,12 @@
+#!/bin/bash
+
+showValue(){
+  local value = 50
+  echo "Value inside function: $value"
+}
+
+showValue
+echo "Value outside functions: $value"
+
+
+
