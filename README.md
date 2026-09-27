@@ -1,102 +1,138 @@
 <div align="center">
 
-# 🐚 Shell Scripting for MLOps
-### *The Journey of an AI/ML Engineer — One Script at a Time*
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&color=4EAA25&center=true&vCenter=true&width=650&lines=Shell+Scripting+for+MLOps+%26+LLMOps;echo+%22Hello+World%22+%E2%86%92+Automated+ML+Pipelines;git+pull+%E2%86%92+docker+build+%E2%86%92+deploy+%F0%9F%9A%80" alt="Typing SVG" />
+
+<br/>
 
 ![Bash](https://img.shields.io/badge/Shell-Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
 ![MLOps](https://img.shields.io/badge/Focus-MLOps-blueviolet?style=for-the-badge)
+![LLMOps](https://img.shields.io/badge/Focus-LLMOps-8A2BE2?style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Deployment-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Learning%20in%20Public-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Series-Completed-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-*Documenting my day-by-day shell scripting practice — from `echo "Hello World"` to automating ML deployments.*
+*A day-by-day, hands-on log of learning Bash for the exact automation problems AI/ML and LLM engineers hit every day — environment setup, training triggers, containerized deployment, and pipeline glue code.*
 
-[About](#-about-this-repo) • [Why Shell in MLOps](#-why-shell-scripting-matters-in-mlops) • [Journey](#-my-daywise-journey) • [Structure](#-repository-structure) • [Run Locally](#%EF%B8%8F-how-to-run) • [Connect](#-connect-with-me)
+<p>
+<a href="#-about-this-repo">About</a> •
+<a href="#-why-shell-scripting-matters-in-mlops--llmops">Why Shell Matters</a> •
+<a href="#️-day-wise-journey">Journey</a> •
+<a href="#-repository-structure">Structure</a> •
+<a href="#️-how-to-run">Run Locally</a> •
+<a href="#-whats-next">What's Next</a> •
+<a href="#-connect-with-me">Connect</a>
+</p>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
 </div>
 
----
-
 ## 📖 About This Repo
 
-I'm **Osama Shabih**, a B.Tech CSE (AI) student on my way to becoming an **AI/ML Engineer**. Before an ML model ever reaches production, it needs an environment that sets itself up, trains itself, tests itself, and deploys itself — and that's where **shell scripting** comes in.
+I'm **Osama Shabih**, a B.Tech CSE (AI) student at **Jamia Hamdard University, New Delhi**, building my way toward an **AI/ML Engineering** role.
 
-This repository is my **public learning log**: every folder (`day01`, `day02`, ...) is a checkpoint in my journey of mastering Bash for real-world MLOps workflows — environment automation, CI/CD, containerized deployments, and pipeline glue code.
+Before any ML model or LLM-powered app ever reaches a user, *something* has to set up the environment, pull the code, run the job, build the container, and push it live — reliably, every single time. That "something" is almost always a shell script. This repo is my hands-on record of learning exactly that skill, one day at a time.
 
-> 💡 **Not a tutorial dump.** Every script here was written, broken, debugged, and understood by me — as part of building the automation skills every ML engineer eventually needs.
+> ✅ **Series completed.** Every script here (`day01` → `day07` and beyond) was written, broken, debugged, and understood by me — no copy-pasted tutorials. I'm now practicing in between other projects, adding new scripts whenever a real automation problem comes up, so expect the occasional new folder.
 
-> 🚧 **Work in progress.** This repo is **not complete** — I'm actively practicing and adding new scripts/days as I go. Expect frequent commits and new folders over time.
+<div align="center">
 
----
+| 📅 Days Logged | 📝 Scripts Written | 🚀 Milestone | 🧠 Status |
+|:---:|:---:|:---:|:---:|
+| 8 | 20+ | Docker + Git deploy pipeline | Completed, practicing further |
 
-## 🤖 Why Shell Scripting Matters in MLOps
+</div>
 
-ML models don't deploy themselves. Behind every production ML pipeline, shell scripts quietly handle the plumbing:
+<br>
 
-| MLOps Task | How Shell Scripting Helps |
-|---|---|
-| 🔧 **Environment Setup** | Automate Conda/venv creation, dependency installs, GPU driver checks |
-| 📦 **Data Pipelines** | Automate data ingestion, cleaning triggers, and file transfers |
-| 🏋️ **Model Training** | Kick off training jobs, pass hyperparameters, schedule via `cron` |
-| 🐳 **Containerization** | Build & run Docker images for reproducible ML environments |
-| 🚀 **CI/CD Deployment** | `git pull` → build → test → deploy, fully automated |
-| 📊 **Monitoring & Logging** | Parse logs, check model health, send automated alerts |
-| ♻️ **Reproducibility** | Turn multi-step manual processes into one reliable command |
+## 🤖 Why Shell Scripting Matters in MLOps & LLMOps
 
-Shell scripting is the **duct tape of MLOps** — invisible when it works, essential when it doesn't exist.
+Models — classic ML or LLMs — don't ship themselves. Behind every real deployment, shell scripts quietly handle the plumbing:
 
----
+| Task | Classic MLOps | LLMOps (extra relevance) |
+|---|---|---|
+| 🔧 **Environment Setup** | Automate Conda/venv creation, dependency installs, GPU driver checks | Bootstrap CUDA/vLLM/Ollama environments, verify GPU memory before loading large weights |
+| 📦 **Data & Model Handling** | Automate ingestion, cleaning triggers, dataset versioning | Pull/quantize model checkpoints, sync prompt/eval datasets |
+| 🏋️ **Training / Serving Jobs** | Kick off training, pass hyperparameters, schedule via `cron` | Launch an LLM inference server, warm up caches, run batch eval jobs |
+| 🐳 **Containerization** | Build & run Docker images for reproducible environments | Package a fine-tuned model or RAG service into a deployable image |
+| 🚀 **CI/CD Deployment** | `git pull` → build → test → deploy, fully automated | Roll out a new model/prompt version behind an API with zero-downtime restarts |
+| 📊 **Monitoring & Logging** | Parse logs, check model/service health, send alerts | Tail token-usage or latency logs, flag hallucination/error spikes |
+| ♻️ **Reproducibility** | Turn multi-step manual processes into one reliable command | Make "spin up an LLM endpoint locally" a single `./run.sh` |
 
-## 🗺️ My Day-Wise Journey
+> Shell scripting is the **duct tape of both MLOps and LLMOps** — invisible when it works, and the first thing you reach for when a pipeline needs to "just run."
+
+<br>
+
+## 🗺️ Day-Wise Journey
 
 | Day | Topic Covered | Key Concepts |
-|---|---|---|
+|:---:|---|---|
 | `day01` | 🌱 First Script | `echo`, shebang (`#!/bin/bash`), running a `.sh` file |
-| `day02` | 🧪 Practice & Output | Writing and executing simple scripts |
-| `day03` | 📂 Exploration | Bash fundamentals continued |
-| `day04` | 🔢 User Input & Conditionals | `read`, `if-else`, even/odd checker, greeting scripts |
-| `day05` | 🔀 Control Flow & Functions | `if`, `case`, string/number comparison, functions, file existence checks |
-| `day06` | 📌 Variables Deep Dive | Variable naming rules, quoting, valid identifiers |
-| `day07` | 🚀 **Real Deployment Automation** | `git pull`, `docker build`, `docker stop/rm/run` — a full Django app deploy script |
+| `day02` | 🧪 Practice & Output | Writing, saving, and executing simple scripts |
+| `day03` | 📂 Bash Exploration | Core Bash fundamentals, syntax practice |
+| `day04` | 🔢 User Input & Conditionals | `read`, `if-else`, even/odd checker, interactive greeting scripts |
+| `day05` | 🔀 Control Flow & Functions | `if`, string/number comparisons, custom functions, file-existence checks, string manipulation |
+| `day06` | 📌 Variables Deep Dive | Variable naming rules, valid identifiers, quoting/assignment gotchas |
+| `day07` | 🚀 **Real Deployment Automation** | `git pull` → `docker build` → `docker stop/rm/run` — a full app deploy script, the same pattern used to ship an ML/LLM service |
+| `day10` | 🧩 Next-Phase Practice | Ongoing practice folder for newer automation experiments as I keep building |
 
-**Progression at a glance:**
+<div align="center">
 
+```mermaid
+graph LR
+    A[🌱 Basics<br/>echo, variables] --> B[🔢 Input & Logic<br/>if/else, functions]
+    B --> C[📂 File & String<br/>Handling]
+    C --> D[🚀 Real Automation<br/>Docker + Git Deploy]
+    D --> E[🧩 Ongoing Practice<br/>MLOps/LLMOps-flavored]
+
+    style A fill:#4EAA25,color:#fff
+    style B fill:#4EAA25,color:#fff
+    style C fill:#4EAA25,color:#fff
+    style D fill:#2496ED,color:#fff
+    style E fill:#8A2BE2,color:#fff
 ```
-Basics (echo, variables) 
-      → Input & Logic (if/else, case) 
-            → Functions & Files 
-                  → Real Automation (Docker + Git based deployment) 🚀
-```
 
-Day 7's `deploy.sh` is the milestone script — it mirrors an actual **CI/CD deployment step** you'd find automating an ML model API into production.
+</div>
 
----
+`day07/deploy.sh` is the milestone script — it mirrors an actual **CI/CD deployment step** you'd find automating an ML model API (or an LLM microservice) into production: pull latest code, rebuild the container, replace the running instance.
+
+<br>
 
 ## 📁 Repository Structure
+
+<details open>
+<summary><b>Click to expand / collapse the folder tree</b></summary>
 
 ```
 Shell-Scripting-for-MLops/
 │
-├── day01/              # First script — basics
+├── day01/              # First script — absolute basics
 │   └── hello.sh
 ├── day02/              # Practice scripts
-├── day03/              # Bash exploration
+├── day03/              # Bash fundamentals continued
 ├── day04/              # User input + conditionals
-│   ├── first.sh        # Even/odd checker
-│   └── myscript.sh      # Interactive greeting
+│   ├── first.sh         # Even/odd checker
+│   ├── myscript.sh       # Interactive greeting
+│   └── myscript1.sh
 ├── day05/              # Control flow, functions, file handling
-│   ├── laden.sh         # File existence check + create
-│   ├── rah.sh            # Custom bash functions
+│   ├── laden.sh          # File existence check + create
+│   ├── rah.sh             # Custom bash functions
+│   ├── str.sh             # String manipulation
 │   └── ...
 ├── day06/              # Variables & naming conventions
+│   ├── file.sh
+│   └── helllo1.sh
 ├── day07/              # 🚀 Deployment automation
-│   └── deploy.sh        # git pull → docker build → docker deploy
+│   └── deploy.sh          # git pull → docker build → docker deploy
+├── day10/              # Ongoing / newer practice
 ├── hello.sh
 ├── LICENSE
 └── README.md
 ```
 
----
+</details>
+
+<br>
 
 ## ▶️ How to Run
 
@@ -112,38 +148,46 @@ chmod +x day07/deploy.sh
 ./day07/deploy.sh
 ```
 
----
+Most scripts under `day01`–`day06` are self-contained — just `chmod +x <script>.sh && ./<script>.sh` and follow the prompts.
+
+<br>
 
 ## 🛠️ Tech & Tools
+
+<div align="center">
 
 ![Linux](https://img.shields.io/badge/OS-Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 ![Bash](https://img.shields.io/badge/Language-Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
 ![Git](https://img.shields.io/badge/VCS-Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
----
+</div>
 
-## 🚧 Roadmap — Currently Practicing / What's Next
+<br>
 
-- [ ] Automate a full ML model training pipeline via shell script
-- [ ] Add a script for Conda/venv environment bootstrapping
-- [ ] Cron-based scheduled model retraining script
-- [ ] Log monitoring & alerting script for a deployed model
-- [ ] CI/CD pipeline using GitHub Actions + shell scripts together
+## 🚧 What's Next
 
----
+The structured "day-wise" series is done, but the practice continues in between other projects:
+
+- [ ] Conda/venv bootstrap script for a fresh ML or LLM project
+- [ ] A script to spin up a local LLM inference server (e.g. Ollama/vLLM) and health-check it
+- [ ] Cron-based scheduled retraining / batch-eval script
+- [ ] Log monitoring & alerting script for a deployed model or LLM API
+- [ ] A full GitHub Actions + shell script CI/CD pipeline for a model/LLM service
+
+<br>
 
 ## 🤝 Connect With Me
 
-I'm **Osama Shabih**, currently pursuing **B.Tech CSE (AI)** and actively building projects toward **AI/ML Engineering roles**. This repo is part of my public build-in-progress portfolio.
+I'm **Osama Shabih**, B.Tech CSE (AI) student, actively building projects and applying for **AI/ML Engineering internships**. This repo is one piece of my public, build-in-progress portfolio.
+
+<div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-osamashabih6960-181717?style=for-the-badge&logo=github)](https://github.com/osamashabih6960)
 
-⭐ **If this repo helped you understand shell scripting for MLOps, consider giving it a star!**
+⭐ **If this repo helped you understand shell scripting for MLOps/LLMOps, consider giving it a star!**
 
----
-
-<div align="center">
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
 *"Automate everything you'd hate to do twice."* 🐚
 
